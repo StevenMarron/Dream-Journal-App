@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dreams</h1>
+
+<div id="dreams">
+  <% @dreams.each do |dream| %>
+    <%= render dream %>
+    <p>
+      <%= link_to "Show this dream", dream %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dream", new_dream_path %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dream %>
+
+<div>
+  <%= link_to "Edit this dream", edit_dream_path(@dream) %> |
+  <%= link_to "Back to dreams", dreams_path %>
+
+  <%= button_to "Destroy this dream", @dream, method: :delete %>
+</div>
