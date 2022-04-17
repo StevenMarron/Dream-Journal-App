@@ -1,27 +1,41 @@
 class DreamsController < ApplicationController
   before_action :set_dream, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /dreams or /dreams.json
   def index
-    @dreams = Dream.all
+    @dreams = Dream.where user_id: current_user.id
   end
 
   # GET /dreams/1 or /dreams/1.json
   def show
+    if @dream.user_id != current_user.id
+      redirect_to dreams_url
+      return
+    end
   end
 
   # GET /dreams/new
   def new
     @dream = Dream.new
+    @dream.user_id = current_user.id
   end
 
   # GET /dreams/1/edit
   def edit
+    if @dream.user_id != current_user.id
+      redirect_to dreams_url
+      return
+    end
   end
 
   # POST /dreams or /dreams.json
   def create
     @dream = Dream.new(dream_params)
+    if @dream.user_id != current_user.id
+      redirect_to dreams_url
+      return
+    end
 
     respond_to do |format|
       if @dream.save
@@ -36,6 +50,10 @@ class DreamsController < ApplicationController
 
   # PATCH/PUT /dreams/1 or /dreams/1.json
   def update
+    if @dream.user_id != current_user.id
+      redirect_to dreams_url
+      return
+    end
     respond_to do |format|
       if @dream.update(dream_params)
         format.html { redirect_to dream_url(@dream), notice: "Dream was successfully updated." }
@@ -49,6 +67,10 @@ class DreamsController < ApplicationController
 
   # DELETE /dreams/1 or /dreams/1.json
   def destroy
+    if @dream.user_id != current_user.id
+      redirect_to dreams_url
+      return
+    end
     @dream.destroy
 
     respond_to do |format|
