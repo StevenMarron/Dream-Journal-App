@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  nightmare: false
+  notes: MyText
+  user: one
+
+two:
+  title: MyString
+  nightmare: false
+  notes: MyText
+  user: two
