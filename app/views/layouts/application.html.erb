@@ -6,11 +6,51 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application","app", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="<%= home_index_path %>">Dreams</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+            <%= link_to 'Home', home_index_path, class:"nav-link"%>
+            </li>
+            <li class="nav-item">
+            <%= link_to 'Dream log', dreams_url, :method => :get, class:"nav-link"%>
+            </li>
+            <li class="nav-item">
+            <%= link_to 'Register', new_user_registration_path, class:"nav-link"%>
+            </li>
+            <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class:"nav-link"%>
+            </li>
+            <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_user_session_path, :method => :get, class:"nav-link"%>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <% if user_signed_in? %>
+        <div><h2>Hey, <%= current_user.email %></h2>
+
+        </div>
+      <% else %>
+        <%= link_to 'Register', new_user_registration_path %> or
+        <%= link_to 'Sign in', new_user_session_path %>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>

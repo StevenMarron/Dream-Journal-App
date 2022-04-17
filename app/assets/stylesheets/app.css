@@ -1,0 +1,13 @@
+.form{
+    margin: 0 auto;
+    width:50%;
+    text-align:center;
+}
+
+.form-control{
+    margin:10px;
+}
+
+.navbar{
+    background-color:rgb(37, 30, 63) !important;
+}
