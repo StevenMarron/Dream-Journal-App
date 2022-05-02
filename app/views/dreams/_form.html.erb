@@ -1,36 +1,38 @@
-<%= form_with(model: dream) do |form| %>
-  <% if dream.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
+<div class="form">
+  <%= form_with(model: dream) do |form| %>
+    <% if dream.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
 
-      <ul>
-        <% dream.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% dream.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="form-group">
+      <%= form.text_field :title, class:"form-control", placeholder:"Dream Title" %>
+    </div>
+
+    <div class="form-check-inline form-switch p-0">
+        <%= form.label :nightmare, style: "display: block", class:"form-check-label", for:"flexSwitchCheckDefault" %>
+        <%= form.check_box :nightmare, class:"form-check-input nightmare-switch", id:"flexSwitchCheckDefault"%>
+      </br>
+    </div>
+
+    <div class="form-group">
+      <%= form.text_area :notes, class:"form-control", placeholder:"Please add notes about your dream here" %>
+    </div>
+
+    <div>
+    <%= form.hidden_field :user_id %>
+    </div>
+
+    <div>
+      <%= form.submit "Submit Dream", class:"btn btn-primary" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :nightmare, style: "display: block" %>
-    <%= form.check_box :nightmare %>
-  </div>
-
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div>
-  <%= form.hidden_field :user_id %>
-  </div>
-
- <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
