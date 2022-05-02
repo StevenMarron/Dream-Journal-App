@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Dreams</h1>
+<h3>Welcome, <%= current_user.email %></h3>
 
-<div id="dreams">
+<%= link_to "+ Add New", new_dream_path, class:"btn btn-dark" %>
+
+<div class="centered" id="dreams">
   <% @dreams.each do |dream| %>
     <%= render dream %>
-    <p>
-      <%= link_to "Show this dream", dream %>
-    </p>
+  <%= link_to "Show this dream", dream, class:"btn btn-primary" %>
   <% end %>
+
 </div>
 
-<%= link_to "New dream", new_dream_path %>
+
