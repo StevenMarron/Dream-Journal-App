@@ -8,7 +8,7 @@ body{
 .form{
     padding:20px;
     margin: 0 auto;
-    margin-top:5%;
+    margin-top:20px;
     width:50%;
     text-align:center;
     background-color:white;
@@ -149,4 +149,36 @@ footer{
   margin:10px;
   display:block;
   align-items: center;
+}
+
+.intro-text{
+  text-align:center;
+  font-size:30px;
+  padding: 70px 0;
+  margin:10px;
+}
+
+.home-add-dream{
+  padding: 70px 0;
+  text-align: center;
+}
+
+.home-add-dream > h3{
+  margin:10px;
+}
+
+.add-dream-button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+.add-new-button{
+  border-radius:30px !important;
+}
+
+.home-intro{
+  animation-duration: 3s;
+  animation-name: fadein;
 }
