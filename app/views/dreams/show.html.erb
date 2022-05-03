@@ -1,8 +1,8 @@
 <%= render @dream %>
 
 <div class="centered">
-  <%= link_to "Back to dreams", dreams_path, class:"btn btn-primary"  %>
-  <%= link_to "Edit this dream", edit_dream_path(@dream), class:"btn btn-secondary" %>
+  <%= link_to "Back to Dreams", dreams_path, class:"btn btn-primary"  %>
+  <%= link_to "Edit Dream", edit_dream_path(@dream), class:"btn btn-secondary" %>
   
-  <%= button_to "Delete this dream", @dream, method: :delete, class:"btn btn-outline-danger" %>
+  <%= button_to "Delete Dream", @dream, method: :delete, class:"btn btn-outline-danger" %>
 </div>

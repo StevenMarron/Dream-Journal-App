@@ -1,8 +1,30 @@
-<div class="home-hero-image">
-    <div class="home-hero-text">
-        <p style="color: white"><%= notice %></p>
-        <h2>Welcome to</h2>
-        <h1>Dream Journal</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="home-hero-image">
+            <div class="home-hero-text">
+                <p style="color: white"><%= notice %></p>
+                <h2>Welcome to</h2>
+                <h1>Dream Journal</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row home-intro">
+    <div class="col-lg-6 col-sm-12">
+        <p class="intro-text">
+            Our goal is to provide a record keeping utility to those interested in
+            documenting their dreams and nightmares. It's advised to log a new entry 
+            into your dream journal as soon as possible after waking to preserve the details of 
+            the dream for future analysis.   
+        </p>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="home-add-dream">
+            <a class="add-dream-button" href="<%= new_dream_path %>"><%= image_tag("Add-Dream.png")%></a>
+            <h3>Add New Dream</h3>
+        </div>
     </div>
 </div>
 
