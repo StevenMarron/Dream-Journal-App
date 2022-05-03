@@ -7,8 +7,10 @@
 <div class="centered" id="dreams">
   <% @dreams.each do |dream| %>
     <%= render dream %>
-  <%= link_to "Show this dream", dream, class:"btn btn-primary" %>
-  <% end %>
+    <%= link_to "Show this dream", dream, class:"btn btn-primary" %>
+
+    <% end %>
+    <%= paginate @dreams %>
 
 </div>
 

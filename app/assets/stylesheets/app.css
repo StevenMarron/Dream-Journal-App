@@ -133,8 +133,20 @@ footer{
 .btn-primary{
   background-color: #604fa5 !important;
   border-color: #251e3f !important;
+  color: white;
 }
 
-.btn-primary:hover{
+.btn-outline-primary{
+  border-color: #251e3f !important;
+  color:#251e3f;
+}
+
+.btn-primary:hover, .btn-outline-primary:hover{
   background-color: #251e3f !important;
+}
+
+.pagination{
+  margin:10px;
+  display:block;
+  align-items: center;
 }
