@@ -45,8 +45,12 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+#devise for user registration
 gem 'devise'
+#kaminari for pagination
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+#ffi required for testing on windows
+gem 'ffi', '~> 1.9', '>= 1.9.10'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -57,6 +61,9 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  #rspec added for testing
+  gem 'rspec-rails'
 end
 
 group :development do

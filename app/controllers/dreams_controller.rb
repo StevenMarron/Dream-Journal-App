@@ -4,9 +4,9 @@ class DreamsController < ApplicationController
 
   # GET /dreams or /dreams.json
   def index
+    # attempt to filter dreams where nightmare=true
+    # @nightmares = Dream.where(user_id: current_user.id).where(nightmare: true).page(params[:page])
     @dreams = Dream.where(user_id: current_user.id).page(params[:page])
-    #attempting to filter dreams where nightmare=true
-    @nightmares = Dream.where(user_id: current_user.id).where(nightmare: true).page(params[:page])
   end
 
   # GET /dreams/1 or /dreams/1.json
