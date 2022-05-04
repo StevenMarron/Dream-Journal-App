@@ -19,8 +19,8 @@
 
     <div class="actions">
       <%= f.submit "Log in", class:"btn btn-primary" %>
-      OR
-      <%= link_to "Register", new_user_registration_path, class:"btn btn-secondary" %>
+
+      <%= render "devise/shared/links" %>
     </div>
   <% end %>
 </div>
