@@ -51,7 +51,10 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 #ffi required for testing on windows
 gem 'ffi', '~> 1.9', '>= 1.9.10'
 #pg replaces sqlite3 when deployed to heroku
-gem 'pg'
+# gem 'pg'
+
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4" 
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -62,7 +65,7 @@ gem 'pg'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-
+  
   #rspec added for testing
   gem 'rspec-rails'
 end
