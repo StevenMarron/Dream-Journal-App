@@ -2,6 +2,7 @@ class DreamsController < ApplicationController
   before_action :set_dream, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
+
   # GET /dreams or /dreams.json
   def index
     # attempt to filter dreams where nightmare=true

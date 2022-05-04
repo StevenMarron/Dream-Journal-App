@@ -9,8 +9,7 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -51,6 +50,8 @@ gem 'devise'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 #ffi required for testing on windows
 gem 'ffi', '~> 1.9', '>= 1.9.10'
+#pg replaces sqlite3 when deployed to heroku
+gem 'pg'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -69,6 +70,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3", "~> 1.4" 
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
