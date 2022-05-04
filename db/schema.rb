@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_17_182242) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_205150) do
   create_table "dreams", force: :cascade do |t|
     t.string "title"
     t.boolean "nightmare"
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_17_182242) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
