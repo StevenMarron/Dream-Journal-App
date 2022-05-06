@@ -52,7 +52,7 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'ffi', '~> 1.9', '>= 1.9.10'
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4" 
+# gem "sqlite3", "~> 1.4" 
 
 # Use Sass to process CSS
 # gem "sassc-rails"
