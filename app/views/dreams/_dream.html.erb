@@ -20,6 +20,14 @@
       <strong>Created at:</strong>
       <%= dream.created_at %>
       </p>
+
+      <% if current_user.admin%>
+        <p>
+        <strong>User:</strong>
+        <%= dream.user.email %>
+        </p>
+      <% end %>
+      
     </div>
   </div>
 </div>

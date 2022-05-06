@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :dreams
   devise_for :users
-  get 'admin', :controller => 'dreams', :action => 'admin'
   resources :users
   root 'home#index'
   get 'home/index'

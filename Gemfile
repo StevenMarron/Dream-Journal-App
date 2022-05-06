@@ -50,11 +50,9 @@ gem 'devise'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 #ffi required for testing on windows
 gem 'ffi', '~> 1.9', '>= 1.9.10'
-#pg replaces sqlite3 when deployed to heroku
-# gem 'pg'
 
 # Use sqlite3 as the database for Active Record
-# gem "sqlite3", "~> 1.4" 
+gem "sqlite3", "~> 1.4" 
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -90,6 +88,7 @@ group :test do
 end
 
 group :production do
+#pg replaces sqlite3 when deployed to heroku
 gem 'pg'
 gem 'rails_12factor'
 end

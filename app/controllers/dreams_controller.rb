@@ -7,12 +7,18 @@ class DreamsController < ApplicationController
   def index
     # attempt to filter dreams where nightmare=true
     # @nightmares = Dream.where(user_id: current_user.id).where(nightmare: true).page(params[:page])
-    @dreams = Dream.where(user_id: current_user.id).page(params[:page])
+    if current_user.admin
+      @dreams = Dream.all
+    else
+      @dreams = Dream.where(user_id: current_user.id).page(params[:page])
+    end
+    @dreams = @dreams.order('created_at DESC').page(params[:page])
   end
 
   # GET /dreams/1 or /dreams/1.json
   def show
-    if @dream.user_id != current_user.id
+    if current_user.admin
+    elsif @dream.user_id != current_user.id
       redirect_to dreams_url
       return
     end
@@ -26,7 +32,8 @@ class DreamsController < ApplicationController
 
   # GET /dreams/1/edit
   def edit
-    if @dream.user_id != current_user.id
+    if current_user.admin
+    elsif @dream.user_id != current_user.id
       redirect_to dreams_url
       return
     end
@@ -53,7 +60,8 @@ class DreamsController < ApplicationController
 
   # PATCH/PUT /dreams/1 or /dreams/1.json
   def update
-    if @dream.user_id != current_user.id
+  if current_user.admin
+  elsif @dream.user_id != current_user.id
       redirect_to dreams_url
       return
     end
@@ -70,7 +78,8 @@ class DreamsController < ApplicationController
 
   # DELETE /dreams/1 or /dreams/1.json
   def destroy
-    if @dream.user_id != current_user.id
+    if current_user.admin
+    elsif @dream.user_id != current_user.id
       redirect_to dreams_url
       return
     end
